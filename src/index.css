@@ -145,7 +145,7 @@
   }
   
   .card-taxi-interactive {
-    @apply card-taxi cursor-pointer hover:border-primary/30 active:scale-98;
+    @apply card-taxi cursor-pointer hover:border-primary/30 active:scale-[0.98];
   }
   
   /* Animation Classes */
