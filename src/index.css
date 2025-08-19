@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Taxi Cab Booking App Design System - Yellow Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Colors */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Taxi Yellow Primary */
+    --primary: 51 100% 50%;  /* #FFD300 */
+    --primary-foreground: 0 0% 8%;
+    --primary-hover: 48 100% 45%;
+    --primary-glow: 51 100% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Black/Gray */
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Grays */
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent */
+    --accent: 220 13% 96%;
+    --accent-foreground: 0 0% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 96%;
+    --ring: 51 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 12px;
+
+    /* Taxi App Specific */
+    --taxi-yellow: 51 100% 50%;
+    --taxi-yellow-light: 51 100% 95%;
+    --taxi-dark: 0 0% 8%;
+    --taxi-gray: 220 9% 46%;
+    --taxi-gray-light: 220 13% 96%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(220 13% 98%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 12px hsl(var(--primary) / 0.1);
+    --shadow-button: 0 2px 8px hsl(var(--primary) / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(var(--primary) / 0.15);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -102,4 +127,52 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  /* Taxi App Button Variants */
+  .btn-taxi {
+    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground font-semibold rounded-xl px-6 py-3 shadow-[var(--shadow-button)] transition-[var(--transition-smooth)] hover:scale-105 active:scale-95;
+  }
+  
+  .btn-taxi-outline {
+    @apply border-2 border-primary text-primary bg-transparent rounded-xl px-6 py-3 font-semibold transition-[var(--transition-smooth)] hover:bg-primary hover:text-primary-foreground hover:scale-105 active:scale-95;
+  }
+  
+  /* Taxi App Card Styles */
+  .card-taxi {
+    @apply bg-gradient-to-br from-card to-card/95 rounded-2xl p-6 shadow-[var(--shadow-card)] border border-border/50 transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1;
+  }
+  
+  .card-taxi-interactive {
+    @apply card-taxi cursor-pointer hover:border-primary/30 active:scale-98;
+  }
+  
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
