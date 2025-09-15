@@ -22,7 +22,7 @@ const Login = () => {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-primary to-primary-hover rounded-2xl mb-4 shadow-[var(--shadow-button)]">
             <Car className="w-10 h-10 text-primary-foreground" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">TaxiGo</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-2">RideEasy</h1>
           <p className="text-muted-foreground">Your reliable ride partner</p>
         </div>
 

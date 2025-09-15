@@ -20,7 +20,7 @@ const BookRide = () => {
   const carTypes = [
     {
       id: "mini",
-      name: "TaxiGo Mini",
+      name: "RideEasy Mini",
       description: "Affordable rides for 1-2 people",
       price: "₹150",
       eta: "3 min",
@@ -30,7 +30,7 @@ const BookRide = () => {
     },
     {
       id: "sedan",
-      name: "TaxiGo Sedan",
+      name: "RideEasy Sedan",
       description: "Comfortable rides for 3-4 people",
       price: "₹220",
       eta: "5 min",
@@ -40,7 +40,7 @@ const BookRide = () => {
     },
     {
       id: "suv",
-      name: "TaxiGo SUV",
+      name: "RideEasy SUV",
       description: "Spacious rides for groups",
       price: "₹350",
       eta: "7 min",
